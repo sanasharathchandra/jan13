@@ -1,54 +1,51 @@
 /** @format */
 
 let arr = [
-  { id: 1, name: "john", age: "18", profession: "developer" },
-  { id: 2, name: "jack", age: "20", profession: "developer" },
-  { id: 3, name: "karen", age: "19", profession: "admin" },
+  { id: 1, name: "john", age: "18", marks: 80 },
+  { id: 2, name: "jack", age: "20", marks: 85 },
+  { id: 3, name: "karen", age: "19", marks: 35 },
 ];
 
-function PrintDeveloperbyMap() {
+function PrintStudentswithMap() {
   //Write your code here , just console.log
-  const p=arr.filter((employee)=>{
-    return employee.profession === 'developer';
-  })
-  p.map((data)=>{
-    console.log(data);
-  })
+  arr.map(arr => {
+    if (arr.marks > 50) {
+      console.log(`Name: ${arr.name}, Marks: ${arr.marks}`);
+    }
+  });
 }
 
-function PrintDeveloperbyForEach() {
+function PrintStudentsbyForEach() {
   //Write your code here , just console.log
-  const f=arr.filter((employee)=>{
-    return employee.profession ==='developer';
-  })
-  f.forEach((data)=>{
-    console.log(data);
-  })
+  arr.forEach(arr => {
+    if(arr.marks>50){
+      console.log(arr.name);
+    }
+  });
 }
 
 function addData() {
   //Write your code here, just console.log
-  const newObj=({id:4,name:"susan",age:"20",profession:"intern"})
-  arr.push(newObj);
-  console.log(newObj);
+  const newStudent = { id: 4, name: "susan", age: "20", marks: 45 };
+  arr.push(newStudent);
+  console.log(arr);
 }
 
-function removeAdmin() {
+function removeFailedStudent() {
   //Write your code here, just console.log
-  const reAdmin=arr.filter((employee)=>{
-    return employee.profession !="admin";
-  })
-  console.log(reAdmin);
+  const passedStudents = arr.filter(arr => arr.marks >= 50);
+  console.log(passedStudents);
 }
 
 function concatenateArray() {
   //Write your code here, just console.log
-  let arr2=[
-    
-  { id: 1, name: "john", age: "18", profession: "developer" },
-  { id: 2, name: "jack", age: "20", profession: "developer" },
-  { id: 3, name: "karen", age: "19", profession: "admin" },
-];
-  const newArr=arr.concat(arr2);
-  console.log(newArr);
+  const additionalStudents = [
+    { id: 4, name: "emma", age: "21", marks: 70 },
+    { id: 5, name: "peter", age: "22", marks: 65 },
+    { id: 6, name: "lisa", age: "20", marks: 55 }
+  ];
+
+  const concatenatedArray = arr.concat(additionalStudents);
+
+  console.log(concatenatedArray);
 }
